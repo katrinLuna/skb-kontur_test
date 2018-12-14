@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Оформление заказа</title>
+  <meta name="charset" content="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<div id="layout">
+  <form action="">
+    <div role="radiogroup">
+      <legend class="title">Способ получения товара</legend>
+
+      <input type="radio" id="delivery-1" name="delivery-method" value="pickup" checked>
+      <label for="delivery-1" id="pickup-label" role="tab" tabindex="0">Самовывоз</label>
+
+      <input type="radio" id="delivery-2" name="delivery-method" value="delivery">
+      <label for="delivery-2" id="delivery-label" role="tab" tabindex="0">Доставка по городу</label>
+    </div>
+
+    <section>
+      <fieldset role="tabpanel" aria-labelledby="pickup-label">
+        <h2>Самовывоз</h2>
+
+        <div role="radiogroup">
+          <input type="radio" id="pickup-point-1" name="pickup-point" value="lenina" checked>
+          <label for="pickup-point-1" tabindex="0">Ленина, 10</label>
+
+          <input type="radio" id="pickup-point-2" name="pickup-point" value="stalina">
+          <label for="pickup-point-2" tabindex="0">Сталина, 20</label>
+
+          <input type="radio" id="pickup-point-3" name="pickup-point" value="khrustcheva">
+          <label for="pickup-point-3" tabindex="0">Хрущева, 30</label>
+
+          <input type="radio" id="pickup-point-4" name="pickup-point" value="brezhneva">
+          <label for="pickup-point-4" tabindex="0">Брежнева, 40</label>
+        </div>
+
+        <div class="map-container"></div>
+      </fieldset>
+
+      <fieldset role="tabpanel" aria-labelledby="delivery-label">
+        <h2>Доставка</h2>
+
+        <fieldset class="group">
+          <label for="address">Адрес</label><input type="text" id="address" name="address" aria-labelledby="tooltip">
+        </fieldset>
+
+        <fieldset class="group">
+          <label for="date">Дата доставки</label>
+          <input type="text" id="date" name="date" value="23/08/1988">
+        </fieldset>
+
+        <fieldset class="group time">
+          <label for="time-from">Время доставки</label>
+          <div class="time-slider">
+            <input type="text" value="08:00" id="time-from" name="time-from" readonly>
+            <div class="time-slider-handle"></div>
+          </div>&nbsp;—
+          <input type="text" value="10:00" id="time-to" name="time-to" readonly>
+        </fieldset>
+
+        <div role="radiogroup" class="payment">
+          <legend class="title">Способ оплаты</legend>
+
+          <input type="radio" id="payment-card" name="payment-method" value="card" checked>
+          <label for="payment-card" tabindex="0">Карта</label>
+
+          <input type="radio" id="payment-cash" name="payment-method" value="cash">
+          <label for="payment-cash" tabindex="0">Наличными курьеру</label>
+        </div>
+
+        <fieldset class="card">
+          <label for="card-1">Номер карты</label>
+
+          <input type="hidden" name="credit-card" required>
+
+          <input type="text" id="card-1" class="card-section" maxlength="4">
+          <input type="text" id="card-2" class="card-section" maxlength="4">
+          <input type="text" id="card-3" class="card-section" maxlength="4">
+          <input type="text" id="card-4" class="card-section" maxlength="4">
+        </fieldset>
+      </fieldset>
+    </section>
+
+    <fieldset class="group phone">
+      <label for="phone">Телефон</label><input type="phone" id="phone" name="phone">
+      <p class="phone-description phone-description-pickup">Товар на складе привязывается к номеру телефона, поэтому его нужно будет назвать при выдаче.
+      <p class="phone-description phone-description-delivery">Телефон нужен для того, чтобы курьер мог связаться с вами, когда товар будет доставлен.
+    </fieldset>
+
+    <div class="submit">
+      <button name="send">Заказать</button>
+      <p>Осталось заполнить:<br><label>адрес</label>, <label for="">и вот это</label> ну <label for="">и неплохо бы вот то</label>
+    </div>
+  </form>
+</div>
+
+<div class="tooltip" id="tooltip" role="tooltip" style="top: 803px; left: 530px;">Пожалуйста, укажите адрес</div>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+body {
+  background: #ebe1ed;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#layout {
+  background: linear-gradient(180deg, #faf6fb, #ebe1ed);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 30px;
+  width: 800px;
+}
+
+
+/* Common form elements */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  display: block;
+  font-size: 0.9em;
+}
+
+.group {
+  padding-bottom: 10px;
+}
+
+input,
+button {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+}
+
+input {
+  padding: 2px 5px;
+}
+
+input:disabled {
+  opacity: 0.6;
+}
+
+input.invalid,
+input:invalid {
+  filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.3));
+}
+
+
+/* Tabs */
+
+div[role=radiogroup] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 0 20px;
+}
+
+.title {
+  clear: both;
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+div[role=radiogroup] input[type=radio] {
+  flex-grow: 0;
+  left: -900em;
+  position: absolute;
+}
+
+div[role=radiogroup] label {
+  background: linear-gradient(180deg, #eee0f3, #a392a7);
+  border-right: solid 1px #998b9d;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 5px 10px;
+}
+
+div[role=radiogroup] input[type=radio]:checked + label {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3) inset;
+}
+
+div[role=radiogroup] label:first-of-type {
+  border-radius: 3px 0 0 3px;
+}
+
+div[role=radiogroup] label:last-of-type {
+  border-radius: 0 3px 3px 0;
+  border-right: 0;
+}
+
+
+/* Map container */
+
+.map-container {
+  background: rgba(0, 0, 0, 0.2);
+  height: 480px;
+  width: 100%;
+}
+
+
+/* Custom fields */
+
+#address {
+  width: 20em;
+}
+
+#date {
+  width: 5em;
+}
+
+.time {
+  user-select: none;
+}
+
+#time-from,
+#time-to {
+  width: 2.5em;
+}
+
+.time-slider {
+  display: inline-block;
+  position: relative;
+}
+
+.time-slider-handle {
+  border: solid 10px transparent;
+  border-bottom-color: #000;
+  border-width: 0 10px 15px 10px;
+  bottom: 0;
+  cursor: move;
+  height: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(-10px, 15px);
+  width: 0;
+}
+
+div.payment {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.phone {
+  margin-top: 20px;
+}
+
+.phone-description {
+  font-size: 0.8em;
+  width: 20em;
+}
+
+
+/* Credit card */
+
+.card-section {
+  width: 2.1em;
+}
+
+
+/* Submit */
+
+.submit {
+  display: flex;
+  align-items: center;
+}
+
+.submit button {
+  background: linear-gradient(180deg, #eee0f3, #a392a7);
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  flex-grow: 0;
+  font-size: 1.5em;
+  margin-right: 20px;
+  padding: 10px 20px;
+}
+
+.submit button:disabled {
+  opacity: 0.6;
+}
+
+.submit p {
+  flex-grow: 1;
+  font-size: 0.8em;
+  padding-top: 5px;
+}
+
+.submit label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  text-decoration: underline;
+}
+
+
+/* Tooltip */
+
+.tooltip {
+  background: rgba(60, 0, 40, 0.6);
+  color: #fff;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+  font-size: 0.8em;
+  padding: 10px;
+  position: absolute;
+  width: 200px;
+}
+
+.tooltip::before {
+  border: solid 10px transparent;
+  border-right-color: rgba(60, 0, 40, 0.6);
+  border-left: 0;
+  content: '';
+  display: block;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
