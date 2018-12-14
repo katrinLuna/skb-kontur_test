@@ -1,11 +1,11 @@
 {
-  "name": "kekstagram",
+  "name": "konturTest",
   "version": "14.0.0",
-  "private": true,
-  "description": "Личный проект «Кекстаграм» от HTML Academy",
+  "private": false,
+  "description": "Тестовое задание для СКБ Контур",
   "repository": {
     "type": "git",
-    "url": "git@github.com:htmlacademy-javascript/489027-kekstagram.git"
+    "url": "git@github.com:katrinLuna/skb-kontur_test.git"
   },
   "bugs": {
     "url": "https://github.com/htmlacademy-javascript/489027-kekstagram/issues"
