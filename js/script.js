@@ -12,9 +12,7 @@
   var pickupElementsArray = [pickupFieldElement, pickupTooltipElement];
   var courierElementsArray = [courierFieldElement, courierTooltipElement];
 
-  var mapContainerElement = document.querySelector('.map-container');
-
-  //toogle delivery method
+  //  toogle delivery method
   pickupButtonElement.addEventListener('click', function () {
     window.utils.showElement(pickupElementsArray);
     window.utils.hideElement(courierElementsArray);
@@ -24,8 +22,5 @@
     window.utils.hideElement(pickupElementsArray);
     window.utils.showElement(courierElementsArray);
   });
-
-  //map for pickup method
-
 
 })();
