@@ -5,22 +5,27 @@
   var pickupFieldElement = document.querySelector('fieldset[aria-labelledby="pickup-label"]');
   var pickupTooltipElement = document.querySelector('.phone-description-pickup');
 
-  var deliveryButtonElement = document.querySelector('#delivery-label');
-  var deliveryFieldElement = document.querySelector('fieldset[aria-labelledby="delivery-label"]');
-  var deliveryTooltipElement = document.querySelector('.phone-description-delivery');
+  var courierButtonElement = document.querySelector('#delivery-label');
+  var courierFieldElement = document.querySelector('fieldset[aria-labelledby="delivery-label"]');
+  var courierTooltipElement = document.querySelector('.phone-description-delivery');
 
   var pickupElementsArray = [pickupFieldElement, pickupTooltipElement];
-  var deliveryElementsArray = [deliveryFieldElement, deliveryTooltipElement];
+  var courierElementsArray = [courierFieldElement, courierTooltipElement];
 
+  var mapContainerElement = document.querySelector('.map-container');
+
+  //toogle delivery method
   pickupButtonElement.addEventListener('click', function () {
     window.utils.showElement(pickupElementsArray);
-    window.utils.hideElement(deliveryElementsArray);
+    window.utils.hideElement(courierElementsArray);
   });
 
-  deliveryButtonElement.addEventListener('click', function () {
+  courierButtonElement.addEventListener('click', function () {
     window.utils.hideElement(pickupElementsArray);
-    window.utils.showElement(deliveryElementsArray);
-
+    window.utils.showElement(courierElementsArray);
   });
+
+  //map for pickup method
+
 
 })();
