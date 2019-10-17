@@ -16,8 +16,7 @@
         {
           'width': '100%',
           'height': '480',
-          'allowfullscreen':
-          'true',
+          'allowfullscreen': 'true',
           'src': srcMap
         }
     );
