@@ -1,5 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+input {
+    height: 26px;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
 .messages {
     width: 300px;
+    padding: 15px;
+}
+
+.show-mess__output-wrapper {
+    position: relative;  
+}
+
+.show-mess__line {
+    width: 100%;
+    padding-left: 20px;
+}
+
+.show-mess__delete-btn {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    border: none;
+    width: 20px;
+    height: 26px;
+    line-height: 26px;
+    display: inline-block;
+}
+
+.show-mess__item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 20px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.show-mess__item--deleted:before {
+    content: "X";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #000000;
 }
 
 .show-mess__list {
@@ -11,6 +84,7 @@
     overflow-y: scroll;
 }
 
-.show-mess__item--deleted {
-    color: red;
+.add-new-mess__btn {
+    width: 18%;
+    height: 26px;
 }

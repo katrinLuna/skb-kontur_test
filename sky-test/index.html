@@ -10,9 +10,14 @@
 <body>
     <section class="messages">
       <div class="show-mess">
-        <input class="show-mess__line" type="text" value="">
-        <!-- если сообщение не влазит-вставляет троеточие -->
-        <button class="show-mess__delete-btn" type="button" disabled="disabled">крестик удаления</button>
+        <div class="show-mess__output-wrapper">
+          <button class="show-mess__delete-btn" type="button" disabled="disabled">
+            <span class="visually-hidden">удаление сообщения</span>
+            X
+          </button>
+          <input class="show-mess__line" type="text" value="" readonly>
+        </div>
+
         <div  class="show-mess__list">
           <!-- иконка удаления сообщения добавляется к узлу если он удален--псевдоэлементом можно крестик добавить -->
 

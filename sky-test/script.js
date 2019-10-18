@@ -1,4 +1,3 @@
-// модуль нодо сделать
 /**
  * @type {HTMLInputElement}
  */
@@ -37,7 +36,7 @@ createMessBtnElement.addEventListener('click', function() {
     newMessValueElement.value = '';
 });
 
-var showingMess = function () {
+var showNextMess = function () {
     if (messArray.length - 1 > indexOfMes) {
         indexOfMes += 1;
     } else if (messArray.length - 1 == indexOfMes) {
@@ -46,14 +45,14 @@ var showingMess = function () {
 
     if (!messArray[indexOfMes].isDeleted) {
         showMessLineElement.value = messArray[indexOfMes].text;
-    } else {
-      showingMess();
+    } else if (deletedCounter !== messArray.length - 1) {
+        showNextMess();
     }
 };
 
 var intevalShowMess = setInterval( function() {
     if (messArray.length > 0) {
-        showingMess();
+        showNextMess();
     }
 }, 2000);
 
@@ -61,17 +60,13 @@ deleteMessBtnElement.addEventListener('click', function() {
     messArray[indexOfMes].isDeleted = true;
     messArray[indexOfMes].nodeLink.classList.add('show-mess__item--deleted');
         
-    if (deletedCounter < messArray.length - 1) {
+    if (deletedCounter !== messArray.length - 1) {
         deletedCounter += 1;
-        showingMess();
-    } else {
-        deletedCounter = 0;
+        showNextMess();
+    } else if (deletedCounter === messArray.length - 1) {
         showMessLineElement.value = '';
-        clearInterval(intevalShowMess);
         deleteMessBtnElement.setAttribute('disabled', 'disabled');
     }
-    console.log(deletedCounter);
-    
   }
 );
 
