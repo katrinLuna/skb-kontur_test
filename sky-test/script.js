@@ -15,6 +15,7 @@ var showMessLineElement = document.querySelector('.show-mess__line');
  */
 var messArray = [];
 var indexOfMes = -1;
+var deletedCounter = 0;
 
 var createNewMess = function (value) {
     var messItem = document.createElement('p');
@@ -25,9 +26,11 @@ var createNewMess = function (value) {
                     nodeLink: messItem,
                     isDeleted: false
     });
+
+    deleteMessBtnElement.removeAttribute('disabled');
 }
 
-createMessBtnElement.addEventListener("click", function() {
+createMessBtnElement.addEventListener('click', function() {
     if (newMessValueElement.value.length > 0) {
         createNewMess(newMessValueElement.value);
     }
@@ -48,7 +51,7 @@ var showingMess = function () {
     }
 };
 
-setInterval( function() {
+var intevalShowMess = setInterval( function() {
     if (messArray.length > 0) {
         showingMess();
     }
@@ -57,8 +60,18 @@ setInterval( function() {
 deleteMessBtnElement.addEventListener('click', function() {
     messArray[indexOfMes].isDeleted = true;
     messArray[indexOfMes].nodeLink.classList.add('show-mess__item--deleted');
+        
+    if (deletedCounter < messArray.length - 1) {
+        deletedCounter += 1;
+        showingMess();
+    } else {
+        deletedCounter = 0;
+        showMessLineElement.value = '';
+        clearInterval(intevalShowMess);
+        deleteMessBtnElement.setAttribute('disabled', 'disabled');
+    }
+    console.log(deletedCounter);
+    
   }
 );
-
-// добавить сортировку массива по флагу
 
