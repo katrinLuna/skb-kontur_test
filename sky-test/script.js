@@ -5,6 +5,7 @@
 var newMessValueElement = document.querySelector('.add-new-mess__input');
 var messNodeListElement = document.querySelector('.show-mess__list');
 var createMessBtnElement = document.querySelector('.add-new-mess__btn');
+var deleteMessBtnElement = document.querySelector('.show-mess__delete-btn');
 /**
  * @type {HTMLInputElement}
  */
@@ -13,7 +14,7 @@ var showMessLineElement = document.querySelector('.show-mess__line');
  * @type {Array}
  */
 var messArray = [];
-var indexOfMes = 0;
+var indexOfMes = -1;
 
 var createNewMess = function (value) {
     var messItem = document.createElement('p');
@@ -22,8 +23,7 @@ var createNewMess = function (value) {
     messNodeListElement.appendChild(messItem);
     messArray.push({text: value,
                     nodeLink: messItem,
-                    isDeleted: false,
-                    isShow: true
+                    isDeleted: false
     });
 }
 
@@ -34,28 +34,31 @@ createMessBtnElement.addEventListener("click", function() {
     newMessValueElement.value = '';
 });
 
-var showingMess = function (index) {
-    showMessLineElement.value = messArray[index].text;
-
-    if (messArray.length - 1 > index) {
+var showingMess = function () {
+    if (messArray.length - 1 > indexOfMes) {
         indexOfMes += 1;
-    } else if (messArray.length - 1 == index) {
+    } else if (messArray.length - 1 == indexOfMes) {
         indexOfMes = 0;
+    }
+
+    if (!messArray[indexOfMes].isDeleted) {
+        showMessLineElement.value = messArray[indexOfMes].text;
+    } else {
+      showingMess();
     }
 };
 
 setInterval( function() {
     if (messArray.length > 0) {
-        showingMess(indexOfMes);
+        showingMess();
     }
-}, 3000);
+}, 2000);
 
+deleteMessBtnElement.addEventListener('click', function() {
+    messArray[indexOfMes].isDeleted = true;
+    messArray[indexOfMes].nodeLink.classList.add('show-mess__item--deleted');
+  }
+);
 
-
-
-//надо на messArr сделать setinterval для показа сообщений у которых флаг isShow равен true
-
-//delete-btn на этом узле обработчик событий - 
-// по которому isShow у элемента становится false
-// и для ноды рисуется крестик по флагу тоже 
+// добавить сортировку массива по флагу
 

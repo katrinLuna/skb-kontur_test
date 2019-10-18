@@ -10,3 +10,7 @@
     border: 3px solid #d7d7d7;
     overflow-y: scroll;
 }
+
+.show-mess__item--deleted {
+    color: red;
+}
