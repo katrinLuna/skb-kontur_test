@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section class="messages">
       <div class="show-mess">
         <input class="show-mess__line" type="text" value="">
         <!-- если сообщение не влазит-вставляет троеточие -->
-        <button type="button">крестик удаления</button>
+        <button class="show-mess__delete-btn" type="button">крестик удаления</button>
         <div  class="show-mess__list">
           <!-- иконка удаления сообщения добавляется к узлу если он удален--псевдоэлементом можно крестик добавить -->
 
@@ -19,7 +20,7 @@
       </div>
       <div class="add-new-mess">
         <input class="add-new-mess__input" type="text" value="">
-        <button class="add-new-mess__btn" type="button">Добавить сообщение</button>
+        <button class="add-new-mess__btn" type="button">Send</button>
       </div>
     </section>
 
