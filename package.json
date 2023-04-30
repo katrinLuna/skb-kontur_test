@@ -8,7 +8,7 @@
     "url": "git@github.com:katrinLuna/skb-kontur_test.git"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "eslint": "^8.39.0",
     "eslint-config-htmlacademy": "0.5.2"
   },
   "license": "MIT",
